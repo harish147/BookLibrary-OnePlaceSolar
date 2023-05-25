@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Panel</title>
+<link th:href="@{/css/master.css}" rel="stylesheet" />
+<link th:href="@{/css/adminhome.css}" rel="stylesheet" />
+</head>
+<body>
+	<header class="header">
+		<h1 class="heading">Admin Panel</h1>
+	</header>
+
+	<main class="main">
+		<form class="form" action="/admin/savebook" method="post">
+			<input class="input" type="text" placeholder="Name" name="name">
+			<input class="input" type="text" placeholder="Author" name="author">
+			<input class="input" type="text" placeholder="Genre" name="genre">
+			<input class="input" type="text" placeholder="Summary" name="summary">
+			<input class="button" type="submit" value="Add Book">
+		</form>
+		<button class="button" onclick="window.location.href='/logout';">Logout</button>
+	</main>
+</body>
+</html>

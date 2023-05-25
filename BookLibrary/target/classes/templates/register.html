@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Book Library</title>
+<link th:href="@{/css/master.css}" rel="stylesheet" />
+<link th:href="@{/css/register.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<header class="header">
+		<h1 class="heading">Book Library</h1>
+	</header>
+
+	<main class="main">
+		<form action="/register" method="post" class="form">
+			<input class="input" type="text" placeholder="First Name"
+				name="firstName"> <input class="input" type="text"
+				placeholder="Last Name" name="lastName"> <input
+				class="input" type="text" placeholder="Login Username"
+				name="loginId"> <input class="input" type="password"
+				placeholder="password" name="password"> <input
+				class="button" type="submit">
+		</form>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Book Library</title>
+
+<link th:href="@{/css/master.css}" rel="stylesheet" />
+<link th:href="@{/css/home.css}" rel="stylesheet" />
+</head>
+
+
+
+<body>
+    <script type="text/javascript" th:src="@{/js/home.js}"></script>
+    <header class="header">
+        <h1 class="heading">Book Library</h1>
+    </header>
+
+
+    <main class="main">
+
+        <div>
+            <button id="favoriteToggleButton" class="button" onclick="toggleFavorite()">Favorite Books</button>
+            <button id="update" class="button" onclick="updateSelection()">Update Favorites</button>
+            <button class="button" onclick="window.location.href='/logout';">Logout</button>
+        </div>
+        <table id="allBooks" class="table">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AUTHOR</th>
+                <th>CREATE DATE</th>
+                <th>GENRE</th>
+                <th>SUMMARY</th>
+                <th>FAVORITE</th>
+            </tr>
+
+            <tr th:each="book : ${allBooks}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.name}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.createDate}"></td>
+                <td th:text="${book.genre}"></td>
+                <td th:text="${book.summary}"></td>
+                <td><input type="checkbox" class="favoriteSelection" th:value="${book.id}"></td>
+            </tr>
+        </table>
+
+        <table id="favoriteBooks" class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>REMOVE</th>
+            </tr>
+            <tr th:each="book : ${userFavoriteBooks}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.name}"></td>
+                <td><input type="checkbox" class="removeFavoriteSelection" th:value="${book.id}"></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+</body>
+</html>
